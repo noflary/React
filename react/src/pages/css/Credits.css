@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  .header {
+    position: static;
+    width: 100%;
+    height: 85px;
+    background-color: #275969;
+  }
+  
+  .header .text-wrapper {
+    position: fixed;
+    width: 400px;
+    top: 9px;
+    left: 91px;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  a:link {
+    color: #ffffff;
+  }
+  
+  a:visited {
+    color: #ffffff;
+  }
+
+  .header .Start_btn {
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    right: 20%;
+    top: 10px;
+    background-color: #1f1f1f;
+    border-radius: 15px;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+
+  .header .Start_btn:hover {
+    position: absolute;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #000000;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+    background-color: #bdbdbd
+  }
+
+  .header .SignIn_btn {
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    right: 5%;
+    top: 10px;
+    background-color: #1f1f1f;
+    border-radius: 15px;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+
+  .header .SignIn_btn:hover {
+    position: absolute;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #241e1e;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+    background-color: #bdbdbd;
+  }
+  
+  
+  .infotable {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #353746;
+  }
+
+  .infotable .background {
+    position: absolute;
+    width: 100%;
+    height: 100vx;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    opacity: 35%;
+  }
+
+  .infotable .description {
+    position: absolute;
+    width: 627px;
+    top: 56px;
+    left: 100px;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .infotable .reason {
+    position: absolute;
+    width: 614px;
+    top: 379px;
+    right: 100px;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .infotable .contacts {
+    position: absolute;
+    width: 612px;
+    top: 571px;
+    left: 100px;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  

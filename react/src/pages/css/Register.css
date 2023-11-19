@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  .header {
+    position: static;
+    width: 100%;
+    height: 85px;
+    background-color: #275969;
+  }
+  
+  .header .text-wrapper {
+    position: fixed;
+    width: 400px;
+    top: 9px;
+    left: 91px;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  a:link {
+    color: #ffffff;
+  }
+  
+  a:visited {
+    color: #ffffff;
+  }
+  
+.infotable {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #353746;
+}
+.infotable .background {
+    position: absolute;
+    width: 100%;
+    height: 100vx;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    opacity: 35%;
+    }
+
+.BOX {
+    position: fixed;
+    width: 30%;
+    height: 50vh;
+    left: 70vh;
+    top: 25vh;
+    background-color: #275969;
+    border-radius: 30px;
+      }
+
+.BOX .mail {
+    position: absolute;
+    width: 80%;
+    height: 60px;
+    left: 10%;
+    top: 10%;
+    background-color: #7C7C7C;
+    border-radius: 15px;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    font-size: 32px;
+    color: #ffffff;
+  }
+
+  .BOX .Login {
+    position: absolute;
+    width: 80%;
+    height: 60px;
+    left: 10%;
+    top: 30%;
+    background-color: #7C7C7C;
+    border-radius: 15px;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    font-size: 32px;
+    color: #ffffff;
+  }
+
+  .BOX .Password {
+    position: absolute;
+    width: 80%;
+    height: 60px;
+    left: 10%;
+    top: 50%;
+    background-color: #7C7C7C;
+    border-radius: 15px;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    font-size: 32px;
+    color: #ffffff;
+  }
+
+  .BOX .Password_Rpt {
+    position: absolute;
+    width: 80%;
+    height: 60px;
+    left: 10%;
+    top: 70%;
+    background-color: #7C7C7C;
+    border-radius: 15px;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    font-size: 32px;
+    color: #ffffff;
+  }
+  .BOX .Register_btn {
+    position: absolute;
+    width: 150px;
+    height: 60px;
+    left: 35%;
+    top: 85%;
+    background-color: #000000;
+    border-radius: 15px;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+
+  .BOX .Register_btn:hover {
+    position: absolute;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #241e1e;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+    background-color: #bdbdbd;
+  }
+
+  .mail::placeholder {
+    color: #4d4d4d;
+    opacity: 0.7;
+  }
+  .Login::placeholder {
+    color: #4d4d4d;
+    opacity: 0.7;
+  }
+  .Password::placeholder {
+    color: #4d4d4d;
+    opacity: 0.7;
+  }
+  .Password_Rpt::placeholder {
+    color: #4d4d4d;
+    opacity: 0.7;
+  }
+      
