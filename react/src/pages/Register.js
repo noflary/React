@@ -40,14 +40,29 @@ function Register() {
     setOutputPassRpt(passRptInput.current.value)
   }
 
-  function register() {
+  function registration() {
     console.log(outputLog, outputMail, outputPass, outputPassRpt);
-    /*async componenttDidMounth() {
-      const response = await fetch('http://127/0/0/1:8000')
-      const data = await response.json()
-      this.setState({"username":"user", "email":"email@example.com", "password":"password"})
-    
-    }*/
+
+    const fillPostList = (posts) => {
+      postsList.innerHTML = "";
+
+      if (posts.lenght) {
+        posts.forEach((post, index) => postsList.innerHTML += createPost(post, index)); 
+        };
+    }
+    getPostsBtn.addEventListener('click', async () => {
+      await getPostsRequest();
+      fillPostList(state.posts);
+    })
+
+    function getPostsRequest() {
+      return fetch("http://127.0.0.1:8000/", {
+       headers: {
+        "username":"user", "email":"email@example.com", "password":"password"
+      }
+    })
+    .then((res) => res.json())
+    .then((posts) => state.posts = state.posts.concat(posts))
   }
 
   return (
@@ -59,7 +74,7 @@ function Register() {
             <input class="Login" type="search" id="search" name="search" placeholder="Username" onInput={valueLog} ref={logInput}></input>
             <input class="Password" type="search" id="search" name="search" placeholder="Password" onInput={valuePass} ref={passInput}></input>
             <input class="Password_Rpt" type="search" id="search" name="search" placeholder="Repeat password" onInput={valuePassRpt} ref={passRptInput}></input>
-            <button class="Register_btn" type="button" onClick={register}>Register</button>        
+            <button class="Register_btn" type="button" onClick={registration}>Register</button>        
         </div>
     </div>
   );
