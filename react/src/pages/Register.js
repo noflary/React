@@ -42,6 +42,12 @@ function Register() {
 
   function register() {
     console.log(outputLog, outputMail, outputPass, outputPassRpt);
+    /*async componenttDidMounth() {
+      const response = await fetch('http://127/0/0/1:8000')
+      const data = await response.json()
+      this.setState({"username":"user", "email":"email@example.com", "password":"password"})
+    
+    }*/
   }
 
   return (

@@ -15,6 +15,12 @@ function Home() {
 
   function send() {
     console.log(outputHome);
+    /*async componenttDidMounth() {
+      const response = await fetch('http://127/0/0/1:8000')
+      const data = await response.json()
+      this.setState({"body":"data"})
+    
+    }*/
   }
 
   return (
