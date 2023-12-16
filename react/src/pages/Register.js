@@ -1,10 +1,19 @@
 import './css/Register.css';
 import  background from '../img/background.jpg';
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
+
+axios.defaults.xsrfCookieName = 'csrftoken';
+axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+axios.defaults.withCredentials = true;
+
+const client = axios.create({
+  baseURL: "http://127.0.0.1:8000"
+});
 
 function Register() {
-
   let mailInput = React.createRef();
   let mailOut = React.createRef();
   const [outputMail, setOutputMail] = useState('');
@@ -40,31 +49,77 @@ function Register() {
     setOutputPassRpt(passRptInput.current.value)
   }
 
-  function registration() {
-    console.log(outputLog, outputMail, outputPass, outputPassRpt);
+  const [currentUser, setCurrentUser] = useState();
+  const [registrationToggle, setRegistrationToggle] = useState(false);
+  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-    const fillPostList = (posts) => {
-      postsList.innerHTML = "";
+  useEffect(() => {
+    client.get("/api/user")
+    .then(function(res) {
+      setCurrentUser(true);
+    })
+    .catch(function(error) {
+      setCurrentUser(false);
+    });
+  }, []);
 
-      if (posts.lenght) {
-        posts.forEach((post, index) => postsList.innerHTML += createPost(post, index)); 
-        };
+  function update_form_btn() {
+    if (registrationToggle) {
+      document.getElementById("form_btn").innerHTML = "Register";
+      setRegistrationToggle(false);
+    } else {
+      document.getElementById("form_btn").innerHTML = "Log in";
+      setRegistrationToggle(true);
     }
-    getPostsBtn.addEventListener('click', async () => {
-      await getPostsRequest();
-      fillPostList(state.posts);
-    })
-
-    function getPostsRequest() {
-      return fetch("http://127.0.0.1:8000/", {
-       headers: {
-        "username":"user", "email":"email@example.com", "password":"password"
+  }
+  function submitRegistration(e) {
+    e.preventDefault();
+    client.post(
+      "/api/register",
+      {
+        email: email,
+        username: username,
+        password: password
       }
-    })
-    .then((res) => res.json())
-    .then((posts) => state.posts = state.posts.concat(posts))
+    ).then(function(res) {
+      client.post(
+        "/api/login",
+        {
+          email: email,
+          password: password
+        }
+      ).then(function(res) {
+        setCurrentUser(true);
+      });
+    });
   }
 
+  function submitLogin(e) {
+    e.preventDefault();
+    client.post(
+      "/api/login",
+      {
+        email: email,
+        password: password
+      }
+    ).then(function(res) {
+      setCurrentUser(true);
+    });
+  }
+
+  function submitLogout(e) {
+    e.preventDefault();
+    client.post(
+      "/api/logout",
+      {withCredentials: true}
+    ).then(function(res) {
+      setCurrentUser(false);
+    });
+  }
+
+  if (currentUser) {
   return (
     <div class="app">
         <div class="header"> <div class="text-wrapper"><a href='/'>Prompt ai assistent</a></div> </div>
@@ -74,9 +129,10 @@ function Register() {
             <input class="Login" type="search" id="search" name="search" placeholder="Username" onInput={valueLog} ref={logInput}></input>
             <input class="Password" type="search" id="search" name="search" placeholder="Password" onInput={valuePass} ref={passInput}></input>
             <input class="Password_Rpt" type="search" id="search" name="search" placeholder="Repeat password" onInput={valuePassRpt} ref={passRptInput}></input>
-            <button class="Register_btn" type="button" onClick={registration}>Register</button>        
+            <button class="Register_btn" type="button" onClick={update_form_btn}>Register</button>        
         </div>
     </div>
-  );
+    );
+  }
 }
 export default Register;

@@ -1,8 +1,7 @@
 import './css/Home.css';
 import  background from '../img/background.jpg';
 import React from 'react';
-import { useState } from 'react';
-
+import { useState, useEffect } from 'react';
 function Home() {
   let homeInput = React.createRef();
   let homeOut = React.createRef();
@@ -14,12 +13,12 @@ function Home() {
   }
 
   function send() {
-    console.log(outputHome);
-    /*async componenttDidMounth() {
-      const response = await fetch('http://127/0/0/1:8000')
-      const data = await response.json()
-      this.setState({"body":"data"})
-    
+    /*console.log(outputHome);
+    componenttDidMounth() {
+      const apiUrl = 'http://127/0/0/1:8000';
+      fetch(apiUrl)
+      .then((response) => response.jsnon())
+      .then(data => console.log('outputHome', data));
     }*/
   }
 

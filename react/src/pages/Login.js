@@ -24,11 +24,11 @@ function Login() {
 
   function autorize() {
     console.log(outputLog, outputPass);
-    /*async componenttDidMounth() {
-      const response = await fetch('http://127/0/0/1:8000')
-      const data = await response.json()
-      this.setState({"email":"email@example.com", "password":"password"})
-    
+    /*componenttDidMounth() {
+      const apiUrl = 'http://127/0/0/1:8000'
+      fetch(apiUrl)
+      .then((response) => response.jsnon())
+      then(data => console.log(("email", email@example.com, "password",password));
     }*/
   }
 

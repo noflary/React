@@ -1,17 +1,19 @@
-import { Center, Heading, Text, Stack, Button } from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
-
-function Page404() {
+function Credits() {
+    const navigate = useNavigate()
     return (
-        <Center h="100vh">
-            <Stack textAlign="center">
-                <Heading>404</Heading>
-                <Text>Страница не найдена</Text>
-                <Button as={Link} to="/" colorScheme="gray">
-                    Перейти на страницу Home
-                </Button>
-            </Stack>
-        </Center>
-    )
-}
-export default Page404;
+      <div class="app">
+        <div class="header">
+          <div class="text-wrapper"><a href='/'>Prompt ai assistent</a></div>
+          <button class="Start_btn" onClick={() => navigate('/chat')}>Start</button>
+          <button class="SignIn_btn" onClick={() => navigate('/login')}>Sign in</button>
+        </div>
+        <div class="infotable">
+        <img class="background" src={background} alt="Credits"></img>
+            <div class="description">
+             Страница не найдена
+            </div>
+        </div>
+      </div>
+    );
+  }
+  export default Credits;
