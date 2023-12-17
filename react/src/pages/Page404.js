@@ -7,8 +7,8 @@ return (
   <div class="app">
       <div class="header"> <div class="text-wrapper"><a href='/'>Prompt ai assistent</a></div> </div>
       <div class="infotable"><img class="background" src={background} alt="Credits"></img></div>
-      <div class="BOX">
-                 Страница не найдена
+      <div>
+         Page not found
       </div>
   </div>
   );

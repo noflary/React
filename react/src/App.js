@@ -1,10 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import Home from './pages/Home';
 import Credits from './pages/Credits';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import { Routes, Route, Link} from 'react-router-dom'
-import Page404 from './pages/page404';
+import { Routes, Route} from 'react-router-dom'
+import Page404 from './pages/Page404';
+
 
 class App extends React.Component {
   render() {

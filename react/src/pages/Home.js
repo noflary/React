@@ -6,14 +6,14 @@ import axios from 'axios';
 
 function Home() {
   let homeInput = React.createRef();
-  let homeOut = React.createRef();
   const [outputHome, setOutputHome] = useState('');
   const [display, setDisplay] = useState('');
 
   function valueHome() {
     setOutputHome(homeInput.current.value)
   }
-  
+
+
 
   const send = () => {
     console.log(JSON.stringify(outputHome))

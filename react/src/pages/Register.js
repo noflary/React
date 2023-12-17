@@ -1,25 +1,18 @@
 import './css/Register.css';
 import  background from '../img/background.jpg';
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 function Register() {
   let mailInput = React.createRef();
-  let mailOut = React.createRef();
   const [outputMail, setOutputMail] = useState('');
 
   let logInput = React.createRef();
-  let logOut = React.createRef();
   const [outputLog, setOutputLog] = useState('');
 
   let passInput = React.createRef();
-  let passOut = React.createRef();
   const [outputPass, setOutputPass] = useState('');
-
-  let passRptInput = React.createRef();
-  let passRptOut = React.createRef();
-  const [outputPassRpt, setOutputPassRpt] = useState('');
 
   const [display, setDisplay] = useState('');
 
@@ -36,23 +29,21 @@ function Register() {
     console.log(passInput.current.value);
     setOutputPass(passInput.current.value)
   }
-
-  function valuePassRpt() {
-    console.log(passRptInput.current.value);
-    setOutputPassRpt(passRptInput.current.value)
-  }
-
   const send = () => {
-    console.log(JSON.stringify(outputLog, outputPass))
-    axios.post('http://127.0.0.1:8000/register', {
+    setOutputLog(logInput.current.value)
+    setOutputPass(logInput.current.value)
+    axios.post('http://127.0.0.1:8000/login', {
       method: 'POST',
-      body: JSON.stringify(outputLog, outputPass),
+      email : outputMail.toString(),
+      username: outputLog.toString(),
+      password: outputPass.toString(),
       headers: {
          "Content-type": "application/json; charset=UTF-8"
       }
     }).then(function(res) { 
-    setDisplay(res.data.username)
+    setDisplay(res.data.token)
     })
+    window.localStorage.setItem(res.data.token, outputLog);
   }
 
   return (
@@ -63,7 +54,6 @@ function Register() {
             <input class="mail" type="search" id="search" name="search" placeholder="Mail" onInput={valueMail} ref={mailInput}></input>
             <input class="Login" type="search" id="search" name="search" placeholder="Username" onInput={valueLog} ref={logInput}></input>
             <input class="Password" type="search" id="search" name="search" placeholder="Password" onInput={valuePass} ref={passInput}></input>
-            <input class="Password_Rpt" type="search" id="search" name="search" placeholder="Repeat password" onInput={valuePassRpt} ref={passRptInput}></input>
             <button id="form_btn" class="Register_btn" type="button" onClick={send}>Register</button>        
         </div>
         <div class="rectangle">{display !='' ? JSON.stringify(display) : setDisplay()}</div>

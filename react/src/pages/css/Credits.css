@@ -140,4 +140,15 @@
     letter-spacing: 0;
     line-height: normal;
   }
+  .error {
+    position: fixed;
+    top: 40%;
+    left: 30%;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 100px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
   

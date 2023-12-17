@@ -5,43 +5,46 @@ import { useState } from 'react';
 import axios from 'axios';
 
 
+
 function Login() {
+  
 
   let logInput = React.createRef();
-  let logOut = React.createRef();
-  const [outputLog, setOutputLog] = useState('');
+  const [outputMail, setOutputLog] = useState('');
 
   let passInput = React.createRef();
-  let passOut = React.createRef();
   const [outputPass, setOutputPass] = useState('');
 
   const [display, setDisplay] = useState('');
+  
 
   function valueLog() {
     console.log(logInput.current.value);
-    setOutputLog(logInput.current.value)
   }
+  
   function valuePas() {
     console.log(passInput.current.value);
-    setOutputPass(logInput.current.value)
   }
 
   const send = () => {
-    console.log(JSON.stringify(outputLog, outputPass))
+    setOutputLog(logInput.current.value)
+    setOutputPass(logInput.current.value)
+    console.log(JSON.stringify(outputMail, outputPass))
     axios.post('http://127.0.0.1:8000/login', {
       method: 'POST',
-      body: JSON.stringify(outputLog, outputPass),
+      body: JSON.stringify(outputMail, outputPass),
       headers: {
          "Content-type": "application/json; charset=UTF-8"
       }
     }).then(function(res) { 
-    setDisplay(res.data.email)
+    setDisplay(res.data.token)
+    window.localStorage.getItem(res.data.token);
     })
   }
   
   return (
     <div class="app">
-        <div class="header"> <div class="text-wrapper"><a href='/'>Prompt ai assistent</a></div> </div>
+        <div class="header"> <div class="text-wrapper"><a href='/'>Prompt ai assistent</a></div><div class="username"><a href='/'>{outputMail}</a></div> </div>
         <div class="infotable"><img class="background" src={background} alt="Credits"></img></div>
         <div class="box">
             <input class="Login" type="search" id="search" name="search" placeholder="Your username or mail" onInput={valueLog} ref={logInput}></input>

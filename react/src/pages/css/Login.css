@@ -21,6 +21,18 @@
     letter-spacing: 0;
     line-height: normal;
   }
+  .header .username {
+    position: fixed;
+    width: 400px;
+    top: 9px;
+    right: 91px;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
   
   a:link {
     color: #ffffff;
@@ -136,3 +148,17 @@
   .box a:visited {
     color: #000000;
   }
+  
+  .error {
+    position: fixed;
+    top: 40%;
+    left: 30%;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 100px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+
+  
