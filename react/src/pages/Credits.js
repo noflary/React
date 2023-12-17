@@ -1,4 +1,6 @@
 import './css/Credits.css';
+import { useState } from 'react';
+import axios from 'axios';
 import  background from '../img/background.jpg';
 import { useNavigate } from 'react-router-dom';
 

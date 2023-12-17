@@ -1,25 +1,31 @@
 import './css/Home.css';
 import  background from '../img/background.jpg';
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import axios from 'axios';
+
 function Home() {
   let homeInput = React.createRef();
   let homeOut = React.createRef();
   const [outputHome, setOutputHome] = useState('');
+  const [display, setDisplay] = useState('');
 
   function valueHome() {
-    console.log(homeInput.current.value);
     setOutputHome(homeInput.current.value)
   }
+  
 
-  function send() {
-    /*console.log(outputHome);
-    componenttDidMounth() {
-      const apiUrl = 'http://127/0/0/1:8000';
-      fetch(apiUrl)
-      .then((response) => response.jsnon())
-      .then(data => console.log('outputHome', data));
-    }*/
+  const send = () => {
+    console.log(JSON.stringify(outputHome))
+    axios.post('http://127.0.0.1:8000/home', {
+      method: 'POST',
+      body: JSON.stringify(outputHome),
+      headers: {
+         "Content-type": "application/json; charset=UTF-8"
+      }
+   }).then(function(res) { 
+    setDisplay(res.data.data)
+   })
   }
 
   return (
@@ -31,7 +37,7 @@ function Home() {
                 <button class="text-field__btn" type="button" onClick={send}>Send</button>
             </div>
         </div>
-        <div class="Box"><div class="rectangle"></div></div>
+        <div class="Box"><div class="rectangle">{display !='' ? JSON.stringify(display) : setDisplay()}</div></div>
     </div>
   );
 }

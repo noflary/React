@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  .header {
+    position: static;
+    width: 100%;
+    height: 85px;
+    background-color: #275969;
+  }
+  
+  .header .text-wrapper {
+    position: fixed;
+    width: 400px;
+    top: 9px;
+    left: 91px;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  a:link {
+    color: #ffffff;
+  }
+    
+  a:visited {
+    color: #ffffff;
+  }
+
+  
+.infotable {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #353746;
+}
+.infotable .background {
+    position: absolute;
+    width: 100%;
+    height: 100vx;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    opacity: 35%;
+    }
+
+.box {
+    position: fixed;
+    width: 30%;
+    height: 300px;
+    left: 70vh;
+    top: 35vh;
+    background-color: #275969;
+    border-radius: 30px;
+      }
+
+.box .Login {
+    position: absolute;
+    width: 80%;
+    height: 60px;
+    left: 10%;
+    top: 10%;
+    background-color: #7C7C7C;
+    border-radius: 15px;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    font-size: 32px;
+    color: #ffffff;
+  }
+  .Login::placeholder {
+    color: #4d4d4d;
+    opacity: 0.7;
+  }
+  .box .Password {
+    position: absolute;
+    width: 80%;
+    height: 60px;
+    left: 10%;
+    top: 40%;
+    background-color: #7C7C7C;
+    border-radius: 15px;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    font-size: 32px;
+    color: #ffffff;
+  }
+  .Password::placeholder {
+    color: #4d4d4d;
+    opacity: 0.7;
+  }
+  .box .Login_btn {
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    left: 10%;
+    top: 70%;
+    background-color: #000000;
+    border-radius: 15px;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+
+  .box .Login_btn:hover {
+    position: absolute;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #241e1e;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+    background-color: #bdbdbd;
+  }
+
+  .box .Register {
+    position: absolute;
+    width: 350px;
+    left: 40%;
+    top: 70%;
+    font-family: "Prompt-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 18px;
+  }
+
+  .box a:link {
+    color: #1b1b1b;
+  }
+    
+  .box a:visited {
+    color: #000000;
+  }
